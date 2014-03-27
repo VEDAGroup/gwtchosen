@@ -51,23 +51,30 @@
     </issueManagement>
 
     <organization>
-        <name>Arcbees</name>
-        <url>http://www.arcbees.com</url>
+        <name>VEDA GmbH</name>
+        <url>http://www.veda.net</url>
     </organization>
 
     <scm>
-        <connection>scm:git:git@github.com:jDramaix/gwtchosen.git</connection>
-        <developerConnection>scm:git:git@github.com:jDramaix/gwtchosen.git</developerConnection>
-        <url>https://github.com/jDramaix/gwtchosen.git</url>
+        <connection>scm:git:https://github.com/VEDAGroup/gwtchosen.git</connection>
+        <developerConnection>scm:git:https://github.com/VEDAGroup/gwtchosen.git</developerConnection>
+        <url>https://github.com/VEDAGroup/gwt-chosen</url>
+        <tag>HEAD</tag>
     </scm>
 
-    <ciManagement>
-        <system>Team City</system>
-        <url>http://teamcity.gonevertical.org/viewType.html?buildTypeId=bt11</url>
-    </ciManagement>
+    <distributionManagement>
+        <repository>
+            <id>veda-releases</id>
+            <url>http://repo.veda.de:8081/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>veda-snapshots</id>
+            <url>http://repo.veda.de:8081/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <properties>
-        <gwt.version>2.6.0</gwt.version>
+        <gwt.version>2.5.0</gwt.version>
         <gwtquery.version>1.4.1</gwtquery.version>
         <junit.version>4.11</junit.version>
 
