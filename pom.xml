@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!--<parent>
+    <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
         <version>7</version>
-    </parent>-->
+    </parent>
 
     <groupId>com.arcbees</groupId>
     <artifactId>gwtchosen-project</artifactId>
@@ -117,7 +116,7 @@
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <useReleaseProfile>false</useReleaseProfile>
                     <releaseProfiles>release</releaseProfiles>
-                    <arguments>-Pveda-release -Prelease</arguments>
+                    <arguments>-Psonatype-oss-release -Prelease -Dgpg.passphrase=${gpg.passphrase}</arguments>
                 </configuration>
             </plugin>
 
@@ -144,7 +143,7 @@
                     </excludes>
                     <header>
                         <![CDATA[
-                            <a href="https://github.com/VEDAGroup/gwtchosen" target="_blank">Back to GwtChosen Home</a>
+                            <a href="https://github.com/jDramaix/gwtchosen" target="_blank">Back to GwtChosen Home</a>
                         ]]>
                     </header>
                 </configuration>
@@ -173,8 +172,7 @@
                 <artifactId>site-maven-plugin</artifactId>
                 <version>${github.version}</version>
                 <configuration>
-                    <dryRun>true</dryRun>
-                    <!-- TODO turn off at some point -->
+                    <dryRun>true</dryRun><!-- TODO turn off at some point -->
                     <outputDirectory>javadoc</outputDirectory>
                     <path>${project.version}</path>
                     <message>Creating site for ${project.version}</message>
@@ -217,7 +215,7 @@
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-servlet</artifactId>
             <version>${gwt.version}</version>
-        </dependency>
+        </dependency>        
         <dependency>
             <groupId>com.googlecode.gwtquery</groupId>
             <artifactId>gwtquery</artifactId>
@@ -225,40 +223,4 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
-    <profiles>
-        <profile>
-            <id>veda-release</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <version>2.1.2</version>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.7</version>
-                        <executions>
-                            <execution>
-                                <id>attach-javadocs</id>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>
