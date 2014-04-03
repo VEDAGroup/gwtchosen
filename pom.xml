@@ -11,7 +11,7 @@
     <groupId>com.arcbees</groupId>
     <artifactId>gwtchosen-project</artifactId>
     <packaging>pom</packaging>
-    <version>2.0.1-veda-SNAPSHOT</version>
+    <version>2.0.1-veda</version>
     <name>Chosen plugin project parent.</name>
     <inceptionYear>2012</inceptionYear>
     <url>https://github.com/arcbees/gwtchosen</url>
@@ -59,7 +59,7 @@
         <connection>scm:git:https://github.com/VEDAGroup/gwtchosen.git</connection>
         <developerConnection>scm:git:https://github.com/VEDAGroup/gwtchosen.git</developerConnection>
         <url>https://github.com/VEDAGroup/gwt-chosen</url>
-        <tag>HEAD</tag>
+        <tag>gwtchosen-project-2.0.1-veda</tag>
     </scm>
 
     <distributionManagement>
